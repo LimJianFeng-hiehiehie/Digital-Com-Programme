@@ -97,6 +97,7 @@ void manageContacts() {
     cout << "1. Add Contact\n";
     cout << "2. Search Contact\n";
     cout << "3. Delete Contact\n";
+    cout << "4. View All Contacts\n"; // 🔥 New option
     cout << "Choose an option: ";
 
     if (!(cin >> action)) {
@@ -133,6 +134,16 @@ void manageContacts() {
             cout << "Contact deleted.\n";
         } else {
             cout << "Contact not found.\n";
+        }
+    }
+    else if (action == 4) { // ✅ Show all contacts
+        if (contacts.empty()) {
+            cout << "No contacts saved.\n";
+        } else {
+            cout << "\n--- All Contacts ---\n";
+            for (auto &c : contacts) {
+                cout << c.first << " : " << c.second << endl;
+            }
         }
     }
     else {
